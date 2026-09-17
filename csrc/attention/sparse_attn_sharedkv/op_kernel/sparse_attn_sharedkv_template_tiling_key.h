@@ -28,7 +28,7 @@
 #define CFA_TEMPLATE 1
 #define SCFA_TEMPLATE 2
 // 模板参数支持的范围定义
-ASCENDC_TPL_ARGS_DECL(SparseAttnSharedkv, // 算子OpType
+ASCENDC_TPL_ARGS_DECL(SparseAttnSharedkvV2, // 算子OpType
                       ASCENDC_TPL_BOOL_DECL(FLASH_DECODE, 0, 1),
                       ASCENDC_TPL_UINT_DECL(LAYOUT_T, ASCENDC_TPL_4_BW, ASCENDC_TPL_UI_LIST, SAS_LAYOUT_BSND,
                                             SAS_LAYOUT_TND),

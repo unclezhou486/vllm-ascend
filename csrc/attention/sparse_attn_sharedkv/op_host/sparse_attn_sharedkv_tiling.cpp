@@ -1730,7 +1730,7 @@ ge::graphStatus TilingSparseAttnSharedkv(gert::TilingContext *context)
     return tiling.DoOpTiling(&sasInfo);
 }
 // --------------------------Tiling函数及TilingPrepare函数注册--------
-IMPL_OP_OPTILING(SparseAttnSharedkv)
+IMPL_OP_OPTILING(SparseAttnSharedkvV2)
     .Tiling(TilingSparseAttnSharedkv)
     .TilingParse<SASCompileInfo>(TilingPrepareForSparseAttnSharedkv);
 } // namespace optiling

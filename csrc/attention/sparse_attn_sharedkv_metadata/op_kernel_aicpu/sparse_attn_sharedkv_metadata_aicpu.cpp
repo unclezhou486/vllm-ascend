@@ -1026,7 +1026,7 @@ bool SparseAttnSharedkvMetadataCpuKernel::GenMetaData(SplitResult &splitRes) {
     return true;
 }
 namespace {
-    static const char *kernelType = "SparseAttnSharedkvMetadata";
+    static const char *kernelType = "SparseAttnSharedkvMetadataV2";
     REGISTER_CPU_KERNEL(kernelType, SparseAttnSharedkvMetadataCpuKernel);
 }
 

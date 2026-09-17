@@ -18,7 +18,7 @@ extern "C" {
 #endif
 
 __attribute__((visibility("default"))) aclnnStatus
-aclnnSparseAttnSharedkvMetadataGetWorkspaceSize(
+aclnnSparseAttnSharedkvMetadataV2GetWorkspaceSize(
     const aclTensor* cuSeqLensQOptional,
     const aclTensor* cuSeqLensOriKvOptional,
     const aclTensor* cuSeqLensCmpKvOptional,
@@ -46,7 +46,7 @@ aclnnSparseAttnSharedkvMetadataGetWorkspaceSize(
     aclOpExecutor** executor);
 
 __attribute__((visibility("default"))) aclnnStatus
-aclnnSparseAttnSharedkvMetadata(void* workspace,
+aclnnSparseAttnSharedkvMetadataV2(void* workspace,
                                 uint64_t workspaceSize,
                                 aclOpExecutor* executor,
                                 aclrtStream stream);

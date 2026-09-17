@@ -21,8 +21,8 @@ from vllm_ascend.device.hardware_profile import get_hardware_profile
 from vllm_ascend.utils import AscendDeviceType
 
 _DSA_C_ASCEND_OPS = (
-    "npu_sparse_attn_sharedkv",
-    "npu_sparse_attn_sharedkv_metadata",
+    "npu_sparse_attn_sharedkv_v2",
+    "npu_sparse_attn_sharedkv_metadata_v2",
     "npu_kv_quant_sparse_attn_sharedkv",
     "npu_kv_quant_sparse_attn_sharedkv_metadata",
     "kv_compress_epilog",

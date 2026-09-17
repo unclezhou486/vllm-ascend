@@ -16,9 +16,9 @@
 #include "register/op_def_registry.h"
 
 namespace ops {
-class SparseAttnSharedkv : public OpDef {
+class SparseAttnSharedkvV2 : public OpDef {
 public:
-    explicit SparseAttnSharedkv(const char *name) : OpDef(name)
+    explicit SparseAttnSharedkvV2(const char *name) : OpDef(name)
     {
         this->Input("q")
             .ParamType(REQUIRED)
@@ -123,5 +123,5 @@ public:
         this->AICore().AddConfig("ascend950", aicore_config);
     }
 };
-OP_ADD(SparseAttnSharedkv);
+OP_ADD(SparseAttnSharedkvV2);
 } // namespace ops

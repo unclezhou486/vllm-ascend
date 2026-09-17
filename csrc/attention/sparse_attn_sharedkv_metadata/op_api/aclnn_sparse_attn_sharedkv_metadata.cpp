@@ -58,7 +58,7 @@ static aclnnStatus ParamsCheck(const aclTensor* cuSeqLensQOptional,
   return ACLNN_SUCCESS;
 }
 
-aclnnStatus aclnnSparseAttnSharedkvMetadataGetWorkspaceSize(
+aclnnStatus aclnnSparseAttnSharedkvMetadataV2GetWorkspaceSize(
     const aclTensor* cuSeqLensQOptional,
     const aclTensor* cuSeqLensOriKvOptional,
     const aclTensor* cuSeqLensCmpKvOptional,
@@ -84,7 +84,7 @@ aclnnStatus aclnnSparseAttnSharedkvMetadataGetWorkspaceSize(
     const aclTensor* metaData,
     uint64_t* workspaceSize,
     aclOpExecutor** executor) {
-  L2_DFX_PHASE_1(aclnnSparseAttnSharedkvMetadata,
+  L2_DFX_PHASE_1(aclnnSparseAttnSharedkvMetadataV2,
                  DFX_IN(cuSeqLensQOptional, cuSeqLensOriKvOptional, cuSeqLensCmpKvOptional, sequsedQOptional, sequsedKvOptional, numHeadsQ, numHeadsKv, headDim, batchSizeOptional,
                         maxSeqlenQOptional, maxSeqlenKvOptional, oriTopKOptional, cmpTopKOptional, cmpRatioOptional, oriMaskModeOptional,
                         cmpMaskModeOptional, oriWinLeftOptional, oriWinRightOptional, layoutQOptional, layoutKvOptional,
@@ -117,7 +117,7 @@ aclnnStatus aclnnSparseAttnSharedkvMetadataGetWorkspaceSize(
   auto sequsedKvOptionalContiguous = l0op::Contiguous(sequsedKvOptional, uniqueExecutor.get());
   CHECK_RET(sequsedKvOptionalContiguous != nullptr, ACLNN_ERR_INNER_NULLPTR);
 
-  auto output = l0op::SparseAttnSharedkvMetadata(
+  auto output = l0op::SparseAttnSharedkvMetadataV2(
       cuSeqLensQOptionalContiguous, cuSeqLensOriKvOptionalContiguous, cuSeqLensCmpKvOptionalContiguous,
       sequsedQOptionalContiguous, sequsedKvOptionalContiguous, numHeadsQ, numHeadsKv, headDim, batchSizeOptional,
       maxSeqlenQOptional, maxSeqlenKvOptional, oriTopKOptional, cmpTopKOptional, cmpRatioOptional, oriMaskModeOptional,
@@ -132,9 +132,9 @@ aclnnStatus aclnnSparseAttnSharedkvMetadataGetWorkspaceSize(
 }
 
 __attribute__((visibility("default"))) aclnnStatus
-aclnnSparseAttnSharedkvMetadata(void *workspace, uint64_t workspaceSize,
+aclnnSparseAttnSharedkvMetadataV2(void *workspace, uint64_t workspaceSize,
                                 aclOpExecutor *executor, aclrtStream stream) {
-  L2_DFX_PHASE_2(aclnnSparseAttnSharedkvMetadata);
+  L2_DFX_PHASE_2(aclnnSparseAttnSharedkvMetadataV2);
   return CommonOpExecutorRun(workspace, workspaceSize, executor, stream);
 }
 

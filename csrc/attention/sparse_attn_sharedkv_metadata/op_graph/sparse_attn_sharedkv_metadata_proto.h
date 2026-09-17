@@ -20,7 +20,7 @@
 
 namespace ge {
 
-REG_OP(SparseAttnSharedkvMetadata)
+REG_OP(SparseAttnSharedkvMetadataV2)
     .OPTIONAL_INPUT(cu_seqlens_q, TensorType({DT_INT32}))
     .OPTIONAL_INPUT(cu_seqlens_ori_kv, TensorType({DT_INT32}))
     .OPTIONAL_INPUT(cu_seqlens_cmp_kv, TensorType({DT_INT32}))
@@ -47,7 +47,7 @@ REG_OP(SparseAttnSharedkvMetadata)
     .REQUIRED_ATTR(soc_version, String)
     .REQUIRED_ATTR(aic_core_num, Int)
     .REQUIRED_ATTR(aiv_core_num, Int)
-    .OP_END_FACTORY_REG(SparseAttnSharedkvMetadata)
+    .OP_END_FACTORY_REG(SparseAttnSharedkvMetadataV2)
 
 } // namespace ge
 

@@ -58,5 +58,5 @@ ge::graphStatus InferDataTypeSparseFlashAttention(gert::InferDataTypeContext *co
     return ge::GRAPH_SUCCESS;
 }
 
-IMPL_OP(SparseAttnSharedkv).InferShape(InferShapeSparseAttnSharedkv).InferDataType(InferDataTypeSparseAttnSharedkv);
+IMPL_OP(SparseAttnSharedkvV2).InferShape(InferShapeSparseAttnSharedkv).InferDataType(InferDataTypeSparseAttnSharedkv);
 } // namespace ops

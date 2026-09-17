@@ -177,7 +177,7 @@ TILING_DATA_FIELD_DEF_STRUCT(SparseAttnSharedkvSwaParams, baseParams);
 TILING_DATA_FIELD_DEF_STRUCT(SparseAttnSharedkvCmpParams, cmpParams);
 END_TILING_DATA_DEF
 
-REGISTER_TILING_DATA_CLASS(SparseAttnSharedkv, SparseAttnSharedkvTilingData)
+REGISTER_TILING_DATA_CLASS(SparseAttnSharedkvV2, SparseAttnSharedkvTilingData)
 
 struct SASParaInfo {
     SASTilingRequiredParaInfo q = {nullptr, nullptr};

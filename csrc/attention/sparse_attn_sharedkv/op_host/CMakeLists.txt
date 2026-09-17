@@ -16,7 +16,7 @@ if (BUILD_OPEN_PROJECT)
 endif()
 
 add_ops_compile_options(
-    OP_NAME SparseAttnSharedkv
+    OP_NAME SparseAttnSharedkvV2
     OPTIONS --cce-auto-sync=off
             -Wno-deprecated-declarations
             -mllvm -cce-vf-remove-membar=false

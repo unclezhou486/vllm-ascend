@@ -24,9 +24,9 @@
 
 using namespace op;
 namespace l0op {
-OP_TYPE_REGISTER(SparseAttnSharedkvMetadata);
+OP_TYPE_REGISTER(SparseAttnSharedkvMetadataV2);
 
-const aclTensor* SparseAttnSharedkvMetadata(
+const aclTensor* SparseAttnSharedkvMetadataV2(
     const aclTensor* cuSeqLensQOptional,
     const aclTensor* cuSeqLensOriKvOptional,
     const aclTensor* cuSeqLensCmpKvOptional,
@@ -54,16 +54,16 @@ const aclTensor* SparseAttnSharedkvMetadata(
     int64_t aivCoreNum,
     const aclTensor* metaData,
     aclOpExecutor* executor) {
-    L0_DFX(SparseAttnSharedkvMetadata, cuSeqLensQOptional, cuSeqLensOriKvOptional, cuSeqLensCmpKvOptional, sequsedQOptional, sequsedKvOptional, numHeadsQ, numHeadsKv, headDim, batchSizeOptional,
+    L0_DFX(SparseAttnSharedkvMetadataV2, cuSeqLensQOptional, cuSeqLensOriKvOptional, cuSeqLensCmpKvOptional, sequsedQOptional, sequsedKvOptional, numHeadsQ, numHeadsKv, headDim, batchSizeOptional,
         maxSeqlenQOptional, maxSeqlenKvOptional, oriTopKOptional, cmpTopKOptional, cmpRatioOptional, oriMaskModeOptional,
         cmpMaskModeOptional, oriWinLeftOptional, oriWinRightOptional, layoutQOptional, layoutKvOptional,
         hasOriKvOptional, hasCmpKvOptional, socVersion, aicCoreNum, aivCoreNum, metaData);
 
     static internal::AicpuTaskSpace space(
-        "SparseAttnSharedkvMetadata");
+        "SparseAttnSharedkvMetadataV2");
 
     auto ret = ADD_TO_LAUNCHER_LIST_AICPU(
-        SparseAttnSharedkvMetadata,
+        SparseAttnSharedkvMetadataV2,
         OP_ATTR_NAMES({"num_heads_q", "num_heads_kv", "head_dim", "batch_size", "max_seqlen_q", "max_seqlen_kv",
                      "ori_topk", "cmp_topk", "cmp_ratio", "ori_mask_mode", "cmp_mask_mode",
                      "ori_win_left", "ori_win_right", "layout_q", "layout_kv",
@@ -77,7 +77,7 @@ const aclTensor* SparseAttnSharedkvMetadata(
               aicCoreNum, aivCoreNum));
         OP_CHECK(ret == ACL_SUCCESS,
         OP_LOGE(ACLNN_ERR_INNER_NULLPTR,
-                   "SparseAttnSharedkvMetadata"
+                   "SparseAttnSharedkvMetadataV2"
                    " ADD_TO_LAUNCHER_LIST_AICPU failed."),
         return nullptr);
     return metaData;

@@ -14,7 +14,7 @@
 #include "opdev/op_executor.h"
 
 namespace l0op {
-const aclTensor* SparseAttnSharedkvMetadata(
+const aclTensor* SparseAttnSharedkvMetadataV2(
     const aclTensor* cuSeqLensQOptional,
     const aclTensor* cuSeqLensOriKvOptional,
     const aclTensor* cuSeqLensCmpKvOptional,

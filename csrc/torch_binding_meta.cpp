@@ -2219,8 +2219,8 @@ TORCH_LIBRARY_IMPL_EXPAND(CONCAT(_C, _ascend), Meta, ops) {
     ops.impl("npu_vllm_quant_lightning_indexer_metadata", &vllm_ascend::meta::npu_vllm_quant_lightning_indexer_metadata_meta);
     ops.impl("npu_quant_lightning_indexer_v2", &vllm_ascend::meta::npu_quant_lightning_indexer_v2_meta);
     ops.impl("npu_quant_lightning_indexer_v2_metadata", &vllm_ascend::meta::npu_quant_lightning_indexer_v2_metadata_meta);
-    ops.impl("npu_sparse_attn_sharedkv", &vllm_ascend::meta::npu_sparse_attn_sharedkv_meta);
-    ops.impl("npu_sparse_attn_sharedkv_metadata", &vllm_ascend::meta::npu_sparse_attn_sharedkv_metadata_meta);
+    ops.impl("npu_sparse_attn_sharedkv_v2", &vllm_ascend::meta::npu_sparse_attn_sharedkv_meta);
+    ops.impl("npu_sparse_attn_sharedkv_metadata_v2", &vllm_ascend::meta::npu_sparse_attn_sharedkv_metadata_meta);
     ops.impl("npu_hc_post", &vllm_ascend::meta::npu_hc_post_meta);
     ops.impl("npu_hc_pre_v2", &vllm_ascend::meta::npu_hc_pre_meta);
     ops.impl("npu_hc_pre_v3", &vllm_ascend::meta::npu_hc_pre_v3_meta);

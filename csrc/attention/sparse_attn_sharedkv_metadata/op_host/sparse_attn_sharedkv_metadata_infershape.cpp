@@ -33,7 +33,7 @@ static ge::graphStatus InferDtypeSparseAttnSharedkvMetadata(gert::InferDataTypeC
     return GRAPH_SUCCESS;
 }
 
-IMPL_OP_INFERSHAPE(SparseAttnSharedkvMetadata)
+IMPL_OP_INFERSHAPE(SparseAttnSharedkvMetadataV2)
     .InferShape(InferShapeSparseAttnSharedkvMetadata)
     .InferDataType(InferDtypeSparseAttnSharedkvMetadata);
 } // namespace ops
